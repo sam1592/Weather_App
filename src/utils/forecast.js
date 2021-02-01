@@ -9,10 +9,15 @@ const forecast = (latitude, longitude, callback) => {
         } else if(body.error){
             callback('Location Not Found', undefined)
         } else {
-            const { current, location } = body
+            const { location, current } = body
+            const { name, region } = location
+            const { temperature, wind_speed, weather_descriptions, feelslike, humidity } = current
             callback(undefined, 
-                'The current temp is ' + current.temperature + ' degrees' +
-                ' in ' + location.name + ', ' + location.region
+                'The current temp is ' + temperature + ' degrees' +
+                ' in ' + name + ', ' + region +
+                '. Also the wind speed is ' + wind_speed + ' and forecast is ' + weather_descriptions[0]
+                + '. It feels like ' + feelslike + ' degrees and humidity is '
+                + humidity + '.'
             )
         }
     })
