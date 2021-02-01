@@ -23,7 +23,7 @@ app.use(express.static(publicDirectoryPath));
 app.get("", (req, res) => {
   res.render("index", {
     title: "Weather App",
-    name: "SATYAM SHETH",
+    name: "SAM SHETH",
   });
 });
 
@@ -31,7 +31,7 @@ app.get("/help", (req, res) => {
   res.render("help", {
     message: "This is the help page",
     title: "Help",
-    name: "Satyam",
+    name: "SAM",
   });
 });
 
@@ -39,7 +39,7 @@ app.get("/about", (req, res) => {
   res.render("about", {
     bio: "Software Developer",
     title: "About",
-    name: "SATYAM SHETH",
+    name: "SAM SHETH",
   });
 });
 
@@ -92,7 +92,7 @@ app.get("/help/*", (req, res) => {
   res.render("error", {
     title: "404",
     error: "Help Article Not Found",
-    name: "SATYAM SHETH",
+    name: "SAM SHETH",
   });
 });
 
@@ -100,7 +100,7 @@ app.get("*", (req, res) => {
   res.render("error", {
     title: "404",
     error: "Page Not Found",
-    name: "SATYAM SHETH",
+    name: "SAM SHETH",
   });
 });
 
